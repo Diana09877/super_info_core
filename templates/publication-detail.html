@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<body>
+            <div class="row tm-row">
+                <div class="col-lg-8 tm-post-col">
+                    <div class="tm-post-full">
+                        <div class="mb-4">
+                            <h2 class="pt-2 tm-color-primary tm-post-title">{{ publication.title }}</h2>
+                            <p class="tm-mb-40">{{ publication.category.title }}</p>
+                            <p class="tm-mb-40">{{ publication.created_at }}</p>
+
+                            <img src="{{ publication.image.url }}" alt="Image" class="img-fluid">
+
+                            <p>{{ publication.short_description }}</p>
+                            <p>{{ publication.full_description }}</p>
+                            {% for item in publication.hashtags.all %}
+                            <span class="d-block text-right tm-color-primary">Hashtags: #{{ item.title }}
+                            </span>
+                            {% endfor %}
+                        </div>
+
+
+                        <!-- Comments -->
+                        <div>
+                            <h2 class="tm-color-primary tm-post-title">Comments</h2>
+                            <hr class="tm-hr-primary tm-mb-45">
+                             {% for item in publication.comments.all %}
+                             <div class="tm-comment-reply tm-mb-45">
+                                <hr>
+                                <div class="tm-comment">
+                                    <figure class="tm-comment-figure">
+                                        <figcaption class="tm-color-primary text-center">{{ item.author_name }}</figcaption>
+                                    </figure>
+                                    <p>{{ item.comment_text }}</p>
+                                </div>
+                                <span class="d-block text-right tm-color-primary">{{ item.created_at }}</span>
+                            </div>
+                            {% endfor %}
+                            <form method="POST" action="create-comment/">
+                                {% csrf_token %}
+                                <h2 class="tm-color-primary tm-post-title mb-4">Your comment</h2>
+                                <div class="mb-4">
+                                    <input class="form-control" name="name" type="text" placeholder="Your name">
+                                </div>
+                                <div class="mb-4">
+                                    <textarea class="form-control" name="comment_text" rows="6" placeholder="Your comment text"></textarea>
+                                </div>
+                                <div class="text-right">
+                                    <input type="submit" value="SUBMIT">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <aside class="col-lg-4 tm-aside-col">
+                    <div class="tm-post-sidebar">
+                        <hr class="mb-3 tm-hr-primary">
+                        <h2 class="mb-4 tm-post-title tm-color-primary">CATEGORIES:</h2>
+                        {% for item in category_list %}
+                        <ul class="tm-mb-75 pl-5 tm-category-list">
+                            <li><a href="" class="tm-color-primary">{{ item.title }}</a></li>
+                        </ul>
+                        {% endfor %}
+                        <hr class="mb-3 tm-hr-primary">
+                        <h2 class="tm-mb-40 tm-post-title tm-color-primary">Breaking News:</h2>
+                        {% for publication in related_publications %}
+                        <li><a href="{ url 'publication-detail-url' publication.id %}" class="d-block tm-mb-40">{{ publication.title }}
+                            <figure>
+                                <img src="{{ publication.image.url }}" alt="Image" class="mb-3 img-fluid">
+                                <figcaption class="tm-color-primary">{{ publication.short_description }}</figcaption>
+                            </figure>
+                        </a>
+                        </li>
+                        {% endfor %}
+                    </div>
+                </aside>
+            </div>
+        </main>
+    </div>
+</body>
+{% endblock %}
