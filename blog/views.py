@@ -1,4 +1,5 @@
 # from django.shortcuts import render, redirect, get_object_or_404
+from django.http import HttpResponse
 from django.views.generic import TemplateView, View
 from blog.models import Publication, Category,PublicationComment
 from django.shortcuts import render, redirect
@@ -104,3 +105,12 @@ class ContactView(TemplateView):
 #         return context
 
 
+def Contact_view(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        subject = request.POST.get('subject')
+        message = request.POST.get('message')
+
+        return HttpResponse("Спасибо за ваше сообщение!")
+    return render(request, 'contact.html')
