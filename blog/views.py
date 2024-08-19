@@ -1,17 +1,26 @@
 # from django.shortcuts import render, redirect, get_object_or_404
+#import telebot
+from django.core.paginator import Paginator
+from django.db.models import Q
 from django.http import HttpResponse
 from django.views.generic import TemplateView, View
 from blog.models import Publication, Category,PublicationComment
 from django.shortcuts import render, redirect
 
-from blog.telegram_bot import bot
 
 
 class HomeView(TemplateView):
     template_name = 'index.html'
     def get_context_data(self, **kwargs):
+        publications = Publication.objects.filter(is_active=True)
+
+        paginator = Paginator(publications,3)
+        page_number = self.request.GET.get('page')
+        page_obj = paginator.get_page(page_number)
+
         context = {
-            'publication_list': Publication.objects.filter(is_active=True)
+            'page_obj': page_obj
+
         }
         return context
 
@@ -20,7 +29,9 @@ class HomeSearchView(TemplateView):
     def get_context_data(self, **kwargs):
         search_word = self.request.GET['search']
         context = {
-            'publication_list': Publication.objects.filter(is_active=True, title_icontains=search_word)
+            'page_obj': Publication.objects.filter(is_active=True).filter(
+                Q(title__icontains=search_word) | Q(description__icontains=search_word)
+            )
         }
         return context
 
@@ -36,6 +47,21 @@ class PublicationDetailView(TemplateView):
 
         }
         return context
+#
+# class RelatedDetailView(TemplateView):
+#     template_name = 'publication-detail.html'
+#     def get_context_data(self, **kwargs):
+#        publication_pk = kwargs['pk'],
+#        related_publications = Publication.objects.filter(is_active=True).exclude(id=publication_pk),
+#
+#        context = {
+#            'related_publications': related_publications
+#
+#        }
+#        return context
+
+
+
 # class RelatedPublicationsView(View):
 #     template_name = 'publication-detail.html'
 #
@@ -89,20 +115,13 @@ class PublicationCommentsView(View):
         comment_text = request.POST['comment_text']
         author_name = request.POST['author_name']
 
-        PublicationComment.objects.create(publication=publication, text=comment_text)
-        bot.send_message(chat_id=2, text='CHECK IT OUT! comment has been written for your publucation.')
-        return redirect('publication-detail', pk=publication_pk)
+        PublicationComment.objects.create(publication=publication, comment_text=comment_text, author_name=author_name)
+        #bot.send_message(bot=telebot.TeleBot(chat_id), text='CHECK IT OUT! comment has been written for your publucation.')
+        return redirect('publication-detail-url', pk=publication_pk)
 
 class ContactView(TemplateView):
     template_name = 'contact.html'
 
-# class PublicationCommentView(TemplateView):
-#     template_name = 'publication-detail'
-#     def get_context_data(self, **kwargs):
-#         context = {
-#             'publications': Publication.objects.all()
-#         }
-#         return context
 
 
 def Contact_view(request):

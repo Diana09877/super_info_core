@@ -35,13 +35,14 @@
                                     <p>{{ item.comment_text }}</p>
                                 </div>
                                 <span class="d-block text-right tm-color-primary">{{ item.created_at }}</span>
+                                 <br>
                             </div>
                             {% endfor %}
                             <form method="POST" action="create-comment/">
                                 {% csrf_token %}
                                 <h2 class="tm-color-primary tm-post-title mb-4">Your comment</h2>
                                 <div class="mb-4">
-                                    <input class="form-control" name="name" type="text" placeholder="Your name">
+                                    <input class="form-control" name="author_name" type="text" placeholder="Your name">
                                 </div>
                                 <div class="mb-4">
                                     <textarea class="form-control" name="comment_text" rows="6" placeholder="Your comment text"></textarea>

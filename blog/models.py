@@ -1,4 +1,4 @@
-from django.db import models
+
 from django.db.models import Count
 from django.db.models.functions import datetime
 from django.db import models
@@ -56,10 +56,11 @@ class PublicationComment(models.Model):
     def __str__(self):
         return self.author_name
 
-class Feedback(models.Model):
-    user_name = models.CharField(max_length=100)
-    user_id = models.CharField(max_length=50)
+class Contact(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.CharField(max_length=50)
+    subject = models.TextField()
     message = models.TextField()
 
     def __str__(self):
-        return self.user_name
+        return self.name
