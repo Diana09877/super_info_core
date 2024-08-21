@@ -23,18 +23,36 @@
                 <ul>
                     <li class="tm-nav-item active"><a href="{% url 'home' %}" class="tm-nav-link">
                         <i class="fas fa-home"></i>
-                        Home
+                        {% trans 'Home' %}
                     </a></li>
                     <li class="tm-nav-item"><a href="{% url 'contact' %}" class="tm-nav-link">
                         <i class="far fa-comments"></i>
-                        Contact Us
+                        {% trans 'Contact Us' %}
                                          </a></li>
                     <li class="tm-nav-item"><a href="{% url 'publication-detail' %}" class="tm-nav-link">
                         <i class="fas fa-pen"></i>
-                        Publication Detail
+                        {% trans 'Publication Detail' %}
                     </a></li>
                 </ul>
             </nav>
+            <div class="tm-language-selector">
+            <form action="{% url 'set_language' %}" method="post">
+                {% csrf_token %}
+                <input name="next" type="hidden" value="{{ request.get_full_path }}">
+                <select name="language">
+                    {% get_current_language as LANGUAGE_CODE %}
+                    {% get_available_languages as LANGUAGES %}
+                            {% for lang in LANGUAGES %}
+                    <option value="{{ lang.0 }}" {% if lang.0 ==
+                            LANGUAGE_CODE %} selected
+                            {% endif %}>
+                            {{ lang.1 }}
+                    </option>
+                    {% endfor %}
+                </select>
+                <input type="submit" value="Go">
+            </form>
+        </div>
         </div>
     </header>
     <div class="container-fluid">
@@ -43,7 +61,7 @@
             <div class="row tm-row">
                 <div class="col-12">
                     <form action="{% url 'home-search-url' %}" method="GET" class="form-inline tm-mb-80 tm-search-form">
-                        <input class="form-control tm-search-input" name="search" type="text" placeholder="Search..." aria-label="Search">
+                        <input class="form-control tm-search-input" name="search" type="text" placeholder="{% trans 'Search...' %}" aria-label="Search">
                         <button class="tm-search-button" type="submit">
                             <i class="fas fa-search tm-search-icon" aria-hidden="true"></i>
                         </button>
@@ -60,10 +78,10 @@
 <footer class="row tm-row">
                 <hr class="col-12">
                 <div class="col-md-6 col-12 tm-color-gray">
-                    Design: Toktosun
+                    {% trans 'Design: Toktosun' %}
                 </div>
                 <div class="col-md-6 col-12 tm-color-gray tm-copyright">
-                    Copyright 2024 For students of Toktosun
+                    {% trans 'Copyright 2024 For students of Toktosun' %}
                 </div>
             </footer>
 

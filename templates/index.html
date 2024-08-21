@@ -17,7 +17,7 @@
                     </a>
                     <p class="tm-pt-30"></p>
                     <div class="d-flex justify-content-between tm-pt-45">
-                        <span class="tm-color-primary">Hashtags:
+                        <span class="tm-color-primary">{% trans 'Hashtags:' %}
                             {% for hashtag in item.hashtags.all %}
                             #{{ hashtag.title }}
                             {% endfor %}
@@ -35,15 +35,15 @@
             <div class="row tm-row tm-mt-100 tm-mb-75">
                 <div class="tm-prev-next-wrapper">
                 {% if page_obj.has_previous %}
-                    <a href="?page={{page_obj.previous_page_number }}" class="mb-2 tm-btn tm-btn-primary tm-prev-next disabled tm-mr-20">Prev</a>
+                    <a href="?page={{page_obj.previous_page_number }}" class="mb-2 tm-btn tm-btn-primary tm-prev-next disabled tm-mr-20">{% trans 'Prev' %}</a>
                 {% endif %}
 
                 {% if page_obj.has_next %}
-                    <a href="?page={{page_obj.next_page_number }}" class="mb-2 tm-btn tm-btn-primary tm-prev-next">Next</a>
+                    <a href="?page={{page_obj.next_page_number }}" class="mb-2 tm-btn tm-btn-primary tm-prev-next">{% trans 'Next' %}</a>
                 {% endif %}
                 </div>
                 <div class="tm-paging-wrapper">
-                    <span class="d-inline-block mr-3">Page</span>
+                    <span class="d-inline-block mr-3">{% trans 'Page' %}</span>
                     <nav class="tm-paging-nav d-inline-block">
                         <ul>
 
