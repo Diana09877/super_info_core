@@ -16,4 +16,3 @@ class HashtagTranslationOptions(TranslationOptions):
 # @register(Contact)
 # class ContactTranslationOptions(TranslationOptions):
 #     fields = ('name', 'email', 'message')
-

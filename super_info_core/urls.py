@@ -14,6 +14,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
 from blog.views import HomeView, PublicationDetailView, PublicationCommentsView,  HomeSearchView, \
     Contact_view
@@ -21,10 +22,13 @@ from django.conf.urls.static import static
 from django.urls import path, include
 from django.conf import settings
 
-
-
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('i18/', include('django.conf.urls.i18n')),
+]
+
+
+urlpatterns += i18n_patterns(
     path('home/', HomeView.as_view(), name='home'),
     path('home/search/', HomeSearchView.as_view(), name='home-search-url'),
     path('publication-detail/<int:pk>/', PublicationDetailView.as_view(), name='publication-detail-url'),
@@ -33,9 +37,7 @@ urlpatterns = [
     #path('publication-detail/<int:pk>/',PublicationCommentView.as_view(), name='publications'),
     path('publication-detail/<int:pk>/create-comment/', PublicationCommentsView.as_view()),
     path('contact/', Contact_view, name='contact')
+)
 
-
-
-]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

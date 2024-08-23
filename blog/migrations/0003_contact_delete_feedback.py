@@ -7,6 +7,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ('blog', '0002_feedback_alter_category_title_alter_hashtag_title_and_more'),
+
     ]
 
     operations = [

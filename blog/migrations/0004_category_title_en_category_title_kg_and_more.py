@@ -7,6 +7,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ('blog', '0003_contact_delete_feedback'),
+
     ]
 
     operations = [

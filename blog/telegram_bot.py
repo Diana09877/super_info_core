@@ -6,7 +6,9 @@
 #
 # os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'super_info_core.settings')
 # django.setup()
-#
+
+
+#API_TOKEN = '24582458:1723863989'
 # bot = telebot.TeleBot(API_TOKEN)
 #
 # @bot.message_handler(commands=['help', 'start'])

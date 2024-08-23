@@ -11,8 +11,9 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 import os.path
 from pathlib import Path
-from django.utils.translation import gettext_lazy as _
+#from django.utils.translation import gettext_lazy as _
 from django.core.wsgi import get_wsgi_application
+
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'super_info_core.settings')
 
@@ -40,6 +41,8 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
+    'django.contrib.sites',
+    'django.contrib.flatpages',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -47,9 +50,8 @@ INSTALLED_APPS = [
     'ckeditor',
     'modeltranslation',
     'blog',
-
-
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -116,22 +118,34 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
-
-LANGUAGES = [
-    ('en', _('English')),
-    ('kg', _('Kyrgyz')),
-    ('ru', _('Russian')),
-]
-
-LOCALE_PATHS = os.path.join(BASE_DIR, 'locale')
-
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
-LANGUAGE_CODE = 'en-us'
-
-TIME_ZONE = 'Asia/Bishkek'
 
 USE_TZ = True
+
+LANGUAGE_CODE = 'en'
+
+gettext = lambda s: s
+
+LANGUAGES = (
+    ('en', gettext('English')),
+    ('ru', gettext('Russian')),
+    ('ky', gettext('Kyrgyz')),
+)
+
+LOCALE_PATHS = [
+    BASE_DIR / 'locale/',
+]
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
+# #LANGUAGES = [
+#     ('en', _('English')),
+#     ('kg', _('Kyrgyz')),
+#     ('ru', _('Russian')),
+# ]
+
+#LOCALE_PATHS = os.path.join(BASE_DIR, 'locale')
+
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 MEDIA_URL = '/media/'

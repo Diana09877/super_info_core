@@ -1,5 +1,5 @@
 # from django.shortcuts import render, redirect, get_object_or_404
-#import telebot
+import telebot
 from django.core.paginator import Paginator
 from django.db.models import Q
 from django.http import HttpResponse
@@ -110,18 +110,29 @@ class PublicationCommentsView(View):
     def post(self, request, *args, **kwargs):
         publication_pk = kwargs['pk']
         publication = Publication.objects.get(id=publication_pk)
-
-
         comment_text = request.POST['comment_text']
         author_name = request.POST['author_name']
 
         PublicationComment.objects.create(publication=publication, comment_text=comment_text, author_name=author_name)
-        #bot.send_message(bot=telebot.TeleBot(chat_id), text='CHECK IT OUT! comment has been written for your publucation.')
+        bot.send_message(bot=telebot.TeleBot(chat_id=6512041910), text='CHECK IT OUT! comment has been written for your publucation.')
         return redirect('publication-detail-url', pk=publication_pk)
-
-class ContactView(TemplateView):
-    template_name = 'contact.html'
-
+#
+# class ContactView(TemplateView):
+#     template_name = 'contact.html'
+#
+#     def get_context_data(self, **kwargs):
+#         context = {
+#             'contact_us': Comment.objects.first()
+#         }
+#         return context
+#
+#     def post(self, request, **kwargs):
+#         publication_pk = kwargs['pk']
+#         publication = Publication.objects.get(id=publication_pk)
+#         commant_text = request.POST['comment_text']
+#         PublicationComment.objects.create(publication=publication, text=commant_text)
+#         bot.send_message(chat_id=6512041910, text='CHECK IT OUT! comment has been written for your publucation.')
+#         return render('publication-detail.html', publication_pk),
 
 
 def Contact_view(request):

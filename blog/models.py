@@ -3,14 +3,13 @@ from django.db.models import Count
 from django.db.models.functions import datetime
 from django.db import models
 from ckeditor.fields import RichTextField
-
-
 class Category(models.Model):
     title = models.TextField()
 
     class Meta:
         verbose_name_plural = 'Категории публикаций'
         verbose_name = 'Категория публикации'
+        app_label = 'blog'
 
     def __str__(self):
         return self.title
@@ -21,6 +20,7 @@ class Hashtag(models.Model):
     class Meta:
         verbose_name_plural = 'Хештеги'
         verbose_name = 'Хештег'
+        app_label = 'blog'
 
     def __str__(self):
         return self.title
@@ -44,6 +44,7 @@ class Publication(models.Model):
     class Meta:
         verbose_name_plural = 'Публикации'
         verbose_name = 'Публикация'
+        app_label = 'blog'
 
 
 
@@ -56,6 +57,11 @@ class PublicationComment(models.Model):
     def __str__(self):
         return self.author_name
 
+    class Meta:
+        verbose_name_plural = 'Комментарии публикаций'
+        verbose_name = 'Комментарий Публикации'
+        app_label = 'blog'
+
 class Contact(models.Model):
     name = models.CharField(max_length=100)
     email = models.CharField(max_length=50)
@@ -64,3 +70,8 @@ class Contact(models.Model):
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        verbose_name_plural = 'Контакты'
+        verbose_name = 'Контакт'
+        app_label = 'blog'
