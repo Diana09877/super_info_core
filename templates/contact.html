@@ -5,52 +5,52 @@
 <body>
             <div class="row tm-row tm-mb-120">
                 <div class="col-12">
-                    <h2 class="tm-color-primary tm-post-title tm-mb-60">{% trans 'Contact Us' %}</h2>
+                    <h2 class="tm-color-primary tm-post-title tm-mb-60">{% trans 'Обратная связь' %}</h2>
                 </div>
                 <div class="col-lg-7 tm-contact-left">
                     <form method="POST" action="{% url 'contact' %}"  class="mb-5 ml-auto mr-0 tm-contact-form">
                         {% csrf_token %}
                         <div class="form-group row mb-4">
-                            <label for="name" class="col-sm-3 col-form-label text-right tm-color-primary">{% trans 'Name' %}</label>
+                            <label for="name" class="col-sm-3 col-form-label text-right tm-color-primary">{% trans 'Имя' %}</label>
                             <div class="col-sm-9">
                                 <input class="form-control mr-0 ml-auto" name="name" id="name" type="text" required>
                             </div>
                         </div>
                         <div class="form-group row mb-4">
-                            <label for="email" class="col-sm-3 col-form-label text-right tm-color-primary">{% trans 'Email' %}</label>
+                            <label for="email" class="col-sm-3 col-form-label text-right tm-color-primary">{% trans 'Электронная поча' %}</label>
                             <div class="col-sm-9">
                                 <input class="form-control mr-0 ml-auto" name="email" id="email" type="email" required>
                             </div>
                         </div>
                         <div class="form-group row mb-4">
-                            <label for="subject" class="col-sm-3 col-form-label text-right tm-color-primary">{% trans 'Subject' %}</label>
+                            <label for="subject" class="col-sm-3 col-form-label text-right tm-color-primary">{% trans 'Ваша тема' %}</label>
                             <div class="col-sm-9">
                                 <input class="form-control mr-0 ml-auto" name="subject" id="subject" type="text" required>
                             </div>
                         </div>
                         <div class="form-group row mb-5">
-                            <label for="message" class="col-sm-3 col-form-label text-right tm-color-primary">{% trans 'Message' %}</label>
+                            <label for="message" class="col-sm-3 col-form-label text-right tm-color-primary">{% trans 'Ваше сообщение' %}</label>
                             <div class="col-sm-9">
                                 <textarea class="form-control mr-0 ml-auto" name="message" id="message" rows="8" required></textarea>
                             </div>
                         </div>
                         <div class="form-group row text-right">
                             <div class="col-12">
-                                <input type="submit" value="{% trans 'Submit' %}">
+                                <input type="submit" value="{% trans 'ОТПРАВИТЬ' %}">
                             </div>
                         </div>
                     </form>
                 </div>
                 <div class="col-lg-5 tm-contact-right">
                     <address class="mb-4 tm-color-gray">
-                    {% trans 'Bishkek city, T.Okeev street, 39/7.' %}
+                    {% trans 'г.Бишкек, улица Т. Океева 39/7' %}
                     </address>
                     <span class="d-block">
-                        {% trans 'Tel:' %}
+                        {% trans 'Тел:' %}
                         <a href="tel:060-070-0980" class="tm-color-gray">060-070-0980</a>
                     </span>
                     <span class="mb-4 d-block">
-                        {% trans 'Email:' %}
+                        {% trans 'Электронная почта:' %}
                         <a href="mailto:info@company.com" class="tm-color-gray">Superinfo@company.com</a>
                     </span>
                     <p class="mb-5 tm-line-height-short">

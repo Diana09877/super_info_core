@@ -24,7 +24,7 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('i18/', include('django.conf.urls.i18n')),
+    path('i18n/', include('django.conf.urls.i18n')),
 ]
 
 
@@ -33,10 +33,8 @@ urlpatterns += i18n_patterns(
     path('home/search/', HomeSearchView.as_view(), name='home-search-url'),
     path('publication-detail/<int:pk>/', PublicationDetailView.as_view(), name='publication-detail-url'),
     path('publication-detail/', PublicationDetailView.as_view(), name='publication-detail'),
-    #path('publication-detail/', CategoriesView.as_view(), name='categories'),
-    #path('publication-detail/<int:pk>/',PublicationCommentView.as_view(), name='publications'),
     path('publication-detail/<int:pk>/create-comment/', PublicationCommentsView.as_view()),
-    path('contact/', Contact_view, name='contact')
+    path('contact/', Contact_view, name='contact'),
 )
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

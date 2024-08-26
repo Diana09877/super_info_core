@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-23 17:05+0600\n"
+"POT-Creation-Date: 2024-08-26 16:59+0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,114 +17,185 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-#: .\super_info_core\settings.py:132
-msgid "English"
-msgstr "EN"
 
-#: .\super_info_core\settings.py:133
+#: .\super_info_core\settings.py:132
 msgid "Russian"
 msgstr "RU"
 
-#: .\super_info_core\settings.py:134
+#: .\super_info_core\settings.py:133
 msgid "Kyrgyz"
 msgstr "КG"
 
 #: .\templates\base.html:27
-msgid "Home"
+msgid "Главная страница"
 msgstr "Башкы бет"
 
 #: .\templates\base.html:31 .\templates\contact.html:8
-msgid "Contact Us"
+msgid "Обратная связь"
 msgstr "Биз менен байланышуу"
 
 #: .\templates\base.html:35
-msgid "Publication Detail"
+msgid "Подробности публикации"
 msgstr "Жарыянын маалыматтары"
 
-#: .\templates\base.html:64
-msgid "Search..."
+#: .\templates\base.html:54
+msgid "Поиск..."
 msgstr "Издоо..."
 
-#: .\templates\base.html:81
-msgid "Design: Toktosun"
+#: .\templates\base.html:71
+msgid "Дизайн:Токтосун"
 msgstr "Дизайн: Токтосун"
 
-#: .\templates\base.html:84
-msgid "Copyright 2024 For students of Toktosun"
+#: .\templates\base.html:74
+msgid "Авторское право 2024 для студентов Токтосуна"
 msgstr "2024 автордук укук Токтосундун студенттери учун"
 
 #: .\templates\contact.html:14
-msgid "Name"
+msgid "Имя"
 msgstr "Аты-Жону:"
 
 #: .\templates\contact.html:20
-msgid "Email"
+msgid "Электронная поча"
 msgstr "Электрондук почта:"
 
 #: .\templates\contact.html:26
-msgid "Subject"
+msgid "Ваша тема"
 msgstr "Талкуулоочу зат:"
 
 #: .\templates\contact.html:32
-msgid "Message"
-msgstr "Кабар билдируу:"
+msgid "Ваше сообщение"
+msgstr "Кабар билдируу"
 
-#: .\templates\contact.html:39
-msgid "Submit"
+#: .\templates\contact.html:39 .\templates\publication-detail.html:52
+msgid "ОТПРАВИТЬ"
 msgstr "Жонотуу"
 
 #: .\templates\contact.html:46
-msgid "Bishkek city, T.Okeev street, 39/7."
+msgid "г.Бишкек, улица Т. Океева 39/7"
 msgstr "Кыргыз Республикасы, Бишкек ш., Т. Океев кочосундо, 39/7"
 
 #: .\templates\contact.html:49
-msgid "Tel:"
+msgid "Тел:"
 msgstr "Тел:"
 
 #: .\templates\contact.html:53
-msgid "Email:"
+msgid "Электронная почта:"
 msgstr "Электрондук почта:"
 
 #: .\templates\index.html:21
-msgid "Hashtags:"
+msgid "Хэштеги:"
 msgstr "Хэштег:"
 
 #: .\templates\index.html:39
-msgid "Prev"
+msgid "Предыдущий"
 msgstr "Мурунку"
 
 #: .\templates\index.html:43
-msgid "Next"
+msgid "Следующий"
 msgstr "Кийинки"
 
 #: .\templates\index.html:47
-msgid "Page"
+msgid "Страница"
 msgstr "Бет"
 
 #: .\templates\publication-detail.html:27
-msgid "Comments"
+msgid "Комментарии:"
 msgstr "Комментарийлер:"
 
 #: .\templates\publication-detail.html:44
-msgid "Your comment"
+msgid "Ваш комментарий"
 msgstr "Комментарий калтыруу:"
 
 #: .\templates\publication-detail.html:46
-msgid "Your name"
+msgid "Ваше имя"
 msgstr "Сиздин атыныз"
 
 #: .\templates\publication-detail.html:49
-msgid "Your comment text"
-msgstr "Билдируунун текстиКатгори"
-
-#: .\templates\publication-detail.html:52
-msgid "SUBMIT"
-msgstr "ЖОНОТУУ"
+msgid "Ваш текст комментария"
+msgstr "Билдируунун тексти"
 
 #: .\templates\publication-detail.html:61
-msgid "CATEGORIES:"
+msgid "КАТЕГОРИИ:"
 msgstr "Болумдор:"
 
 #: .\templates\publication-detail.html:68
-msgid "Breaking News:"
+msgid "Актуальные новости::"
 msgstr "Эң көп окулган жаңылыктар"
+
+#~ msgid "English"
+#~ msgstr "EN"
+
+#~ msgid "Home"
+#~ msgstr "Башкы бет"
+
+#~ msgid "Contact Us"
+#~ msgstr "Биз менен байланышуу"
+
+#~ msgid "Publication Detail"
+#~ msgstr "Жарыянын маалыматтары"
+
+#~ msgid "Search..."
+#~ msgstr "Издоо..."
+
+#~ msgid "Design: Toktosun"
+#~ msgstr "Дизайн: Токтосун"
+
+#~ msgid "Copyright 2024 For students of Toktosun"
+#~ msgstr "2024 автордук укук Токтосундун студенттери учун"
+
+#~ msgid "Name"
+#~ msgstr "Аты-Жону:"
+
+#~ msgid "Email"
+#~ msgstr "Электрондук почта:"
+
+#~ msgid "Subject"
+#~ msgstr "Талкуулоочу зат:"
+
+#~ msgid "Message"
+#~ msgstr "Кабар билдируу:"
+
+#~ msgid "Submit"
+#~ msgstr "Жонотуу"
+
+#~ msgid "Bishkek city, T.Okeev street, 39/7."
+#~ msgstr "Кыргыз Республикасы, Бишкек ш., Т. Океев кочосундо, 39/7"
+
+#~ msgid "Tel:"
+#~ msgstr "Тел:"
+
+#~ msgid "Email:"
+#~ msgstr "Электрондук почта:"
+
+#~ msgid "Hashtags:"
+#~ msgstr "Хэштег:"
+
+#~ msgid "Prev"
+#~ msgstr "Мурунку"
+
+#~ msgid "Next"
+#~ msgstr "Кийинки"
+
+#~ msgid "Page"
+#~ msgstr "Бет"
+
+#~ msgid "Comments"
+#~ msgstr "Комментарийлер:"
+
+#~ msgid "Your comment"
+#~ msgstr "Комментарий калтыруу:"
+
+#~ msgid "Your name"
+#~ msgstr "Сиздин атыныз"
+
+#~ msgid "Your comment text"
+#~ msgstr "Билдируунун текстиКатгори"
+
+#~ msgid "SUBMIT"
+#~ msgstr "ЖОНОТУУ"
+
+#~ msgid "CATEGORIES:"
+#~ msgstr "Болумдор:"
+
+#~ msgid "Breaking News:"
+#~ msgstr "Эң көп окулган жаңылыктар"

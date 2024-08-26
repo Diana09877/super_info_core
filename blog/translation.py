@@ -1,5 +1,5 @@
 from modeltranslation.translator import register, TranslationOptions
-from blog.models import Publication, Category, Hashtag
+from .models import Publication, Category, Hashtag
 
 @register(Publication)
 class PublicationTranslationOptions(TranslationOptions):

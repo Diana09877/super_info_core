@@ -11,13 +11,12 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 import os.path
 from pathlib import Path
-#from django.utils.translation import gettext_lazy as _
-from django.core.wsgi import get_wsgi_application
+
 
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'super_info_core.settings')
 
-application = get_wsgi_application()
+
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -39,6 +38,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'modeltranslation',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.sites',
@@ -48,8 +48,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ckeditor',
-    'modeltranslation',
     'blog',
+
 ]
 
 
@@ -57,7 +57,6 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
-    'modeltranslation.middleware.TranslationMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -118,18 +117,18 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
+
+LANGUAGE_CODE = 'ru'
+
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
 USE_TZ = True
 
-LANGUAGE_CODE = 'en'
-
 gettext = lambda s: s
 
 LANGUAGES = (
-    ('en', gettext('English')),
     ('ru', gettext('Russian')),
     ('ky', gettext('Kyrgyz')),
 )
@@ -137,7 +136,8 @@ LANGUAGES = (
 LOCALE_PATHS = [
     BASE_DIR / 'locale/',
 ]
-MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'ru'
+
 # #LANGUAGES = [
 #     ('en', _('English')),
 #     ('kg', _('Kyrgyz')),
