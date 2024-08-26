@@ -21,15 +21,15 @@ msgstr ""
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 #: .\super_info_core\settings.py:132
 msgid "English"
-msgstr "Английский"
+msgstr "EN"
 
 #: .\super_info_core\settings.py:133
 msgid "Russian"
-msgstr "Русский"
+msgstr "RU"
 
 #: .\super_info_core\settings.py:134
 msgid "Kyrgyz"
-msgstr "Кыргызский"
+msgstr "КG"
 
 #: .\templates\base.html:27
 msgid "Home"
@@ -37,11 +37,11 @@ msgstr "Главная страница"
 
 #: .\templates\base.html:31 .\templates\contact.html:8
 msgid "Contact Us"
-msgstr "Связаться"
+msgstr "Обратная связь"
 
 #: .\templates\base.html:35
 msgid "Publication Detail"
-msgstr "Детальная страничка публикации"
+msgstr "Подробности публикации"
 
 #: .\templates\base.html:64
 msgid "Search..."
@@ -49,84 +49,84 @@ msgstr "Поиск..."
 
 #: .\templates\base.html:81
 msgid "Design: Toktosun"
-msgstr ""
+msgstr "Дизайн:Токтосун"
 
 #: .\templates\base.html:84
 msgid "Copyright 2024 For students of Toktosun"
-msgstr ""
+msgstr "Авторское право 2024 для студентов Токтосуна"
 
 #: .\templates\contact.html:14
 msgid "Name"
-msgstr ""
+msgstr "Имя"
 
 #: .\templates\contact.html:20
 msgid "Email"
-msgstr ""
+msgstr "Электронная почта"
 
 #: .\templates\contact.html:26
 msgid "Subject"
-msgstr ""
+msgstr "Ваша тема"
 
 #: .\templates\contact.html:32
 msgid "Message"
-msgstr ""
+msgstr "Ваше сообщение"
 
 #: .\templates\contact.html:39
 msgid "Submit"
-msgstr ""
+msgstr "ОТПРАВИТЬ"
 
 #: .\templates\contact.html:46
 msgid "Bishkek city, T.Okeev street, 39/7."
-msgstr ""
+msgstr "г.Бишкек, улица Т. Океева 39/7"
 
 #: .\templates\contact.html:49
 msgid "Tel:"
-msgstr ""
+msgstr "Тел:"
 
 #: .\templates\contact.html:53
 msgid "Email:"
-msgstr ""
+msgstr "Электронная почта:"
 
 #: .\templates\index.html:21
 msgid "Hashtags:"
-msgstr ""
+msgstr "Хэштеги:"
 
 #: .\templates\index.html:39
 msgid "Prev"
-msgstr ""
+msgstr "Предыдущий"
 
 #: .\templates\index.html:43
 msgid "Next"
-msgstr ""
+msgstr "Следующий"
 
 #: .\templates\index.html:47
 msgid "Page"
-msgstr ""
+msgstr "Страница"
 
 #: .\templates\publication-detail.html:27
 msgid "Comments"
-msgstr ""
+msgstr "Комментарии:"
 
 #: .\templates\publication-detail.html:44
 msgid "Your comment"
-msgstr ""
+msgstr "Ваш комментарий"
 
 #: .\templates\publication-detail.html:46
 msgid "Your name"
-msgstr ""
+msgstr "Ваше имя"
 
 #: .\templates\publication-detail.html:49
 msgid "Your comment text"
-msgstr ""
+msgstr "Ваш текст комментария"
 
 #: .\templates\publication-detail.html:52
 msgid "SUBMIT"
-msgstr ""
+msgstr "ОТПРАВИТЬ"
 
 #: .\templates\publication-detail.html:61
 msgid "CATEGORIES:"
-msgstr ""
+msgstr "КАТЕГОРИИ:"
 
 #: .\templates\publication-detail.html:68
 msgid "Breaking News:"
-msgstr ""
+msgstr "Актуальные новости:"

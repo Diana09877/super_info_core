@@ -19,15 +19,15 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 #: .\super_info_core\settings.py:132
 msgid "English"
-msgstr "Английский"
+msgstr "EN"
 
 #: .\super_info_core\settings.py:133
 msgid "Russian"
-msgstr "Орус Тил"
+msgstr "RU"
 
 #: .\super_info_core\settings.py:134
 msgid "Kyrgyz"
-msgstr "Кыргыз тил"
+msgstr "КG"
 
 #: .\templates\base.html:27
 msgid "Home"
@@ -35,63 +35,63 @@ msgstr "Башкы бет"
 
 #: .\templates\base.html:31 .\templates\contact.html:8
 msgid "Contact Us"
-msgstr "Байланышуу"
+msgstr "Биз менен байланышуу"
 
 #: .\templates\base.html:35
 msgid "Publication Detail"
-msgstr ""
+msgstr "Жарыянын маалыматтары"
 
 #: .\templates\base.html:64
 msgid "Search..."
-msgstr ""
+msgstr "Издоо..."
 
 #: .\templates\base.html:81
 msgid "Design: Toktosun"
-msgstr ""
+msgstr "Дизайн: Токтосун"
 
 #: .\templates\base.html:84
 msgid "Copyright 2024 For students of Toktosun"
-msgstr ""
+msgstr "2024 автордук укук Токтосундун студенттери учун"
 
 #: .\templates\contact.html:14
 msgid "Name"
-msgstr ""
+msgstr "Аты-Жону:"
 
 #: .\templates\contact.html:20
 msgid "Email"
-msgstr ""
+msgstr "Электрондук почта:"
 
 #: .\templates\contact.html:26
 msgid "Subject"
-msgstr ""
+msgstr "Талкуулоочу зат:"
 
 #: .\templates\contact.html:32
 msgid "Message"
-msgstr ""
+msgstr "Кабар билдируу:"
 
 #: .\templates\contact.html:39
 msgid "Submit"
-msgstr ""
+msgstr "Жонотуу"
 
 #: .\templates\contact.html:46
 msgid "Bishkek city, T.Okeev street, 39/7."
-msgstr ""
+msgstr "Кыргыз Республикасы, Бишкек ш., Т. Океев кочосундо, 39/7"
 
 #: .\templates\contact.html:49
 msgid "Tel:"
-msgstr ""
+msgstr "Тел:"
 
 #: .\templates\contact.html:53
 msgid "Email:"
-msgstr ""
+msgstr "Электрондук почта:"
 
 #: .\templates\index.html:21
 msgid "Hashtags:"
-msgstr ""
+msgstr "Хэштег:"
 
 #: .\templates\index.html:39
 msgid "Prev"
-msgstr ""
+msgstr "Мурунку"
 
 #: .\templates\index.html:43
 msgid "Next"
@@ -99,32 +99,32 @@ msgstr "Кийинки"
 
 #: .\templates\index.html:47
 msgid "Page"
-msgstr "бет"
+msgstr "Бет"
 
 #: .\templates\publication-detail.html:27
 msgid "Comments"
-msgstr ""
+msgstr "Комментарийлер:"
 
 #: .\templates\publication-detail.html:44
 msgid "Your comment"
-msgstr ""
+msgstr "Комментарий калтыруу:"
 
 #: .\templates\publication-detail.html:46
 msgid "Your name"
-msgstr ""
+msgstr "Сиздин атыныз"
 
 #: .\templates\publication-detail.html:49
 msgid "Your comment text"
-msgstr ""
+msgstr "Билдируунун текстиКатгори"
 
 #: .\templates\publication-detail.html:52
 msgid "SUBMIT"
-msgstr ""
+msgstr "ЖОНОТУУ"
 
 #: .\templates\publication-detail.html:61
 msgid "CATEGORIES:"
-msgstr ""
+msgstr "Болумдор:"
 
 #: .\templates\publication-detail.html:68
 msgid "Breaking News:"
-msgstr "Кызыктуу маалыматтар"
+msgstr "Эң көп окулган жаңылыктар"
