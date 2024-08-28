@@ -7,6 +7,8 @@ from django.views.generic import TemplateView, View
 from blog.models import Publication, Category,PublicationComment
 from django.shortcuts import render, redirect
 
+from blog.telegram_bot import bot
+from local_settings import chat_id
 
 
 class HomeView(TemplateView):
@@ -107,6 +109,7 @@ class PublicationDetailView(TemplateView):
 
 
 class PublicationCommentsView(View):
+
     def post(self, request, *args, **kwargs):
         publication_pk = kwargs['pk']
         publication = Publication.objects.get(id=publication_pk)
@@ -114,7 +117,7 @@ class PublicationCommentsView(View):
         author_name = request.POST['author_name']
 
         PublicationComment.objects.create(publication=publication, comment_text=comment_text, author_name=author_name)
-        bot.send_message(bot=telebot.TeleBot(chat_id=6512041910), text='CHECK IT OUT! comment has been written for your publucation.')
+        bot.send_message(bot=telebot.TeleBot(chat_id), text='CHECK IT OUT! comment has been written for your publucation.')
         return redirect('publication-detail-url', pk=publication_pk)
 #
 # class ContactView(TemplateView):

@@ -33,7 +33,7 @@ urlpatterns += i18n_patterns(
     path('home/search/', HomeSearchView.as_view(), name='home-search-url'),
     path('publication-detail/<int:pk>/', PublicationDetailView.as_view(), name='publication-detail-url'),
     path('publication-detail/', PublicationDetailView.as_view(), name='publication-detail'),
-    path('publication-detail/<int:pk>/create-comment/', PublicationCommentsView.as_view()),
+    path('publication-detail/<int:pk>/create-comment/', PublicationCommentsView.as_view(),name='publication-detail-url'),
     path('contact/', Contact_view, name='contact'),
 )
 
