@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="ProjectModuleManager">
-    <modules>
-      <module fileurl="file://$PROJECT_DIR$/../super_info_layout/.idea/super_info_layout.iml" filepath="$PROJECT_DIR$/../super_info_layout/.idea/super_info_layout.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/Super_info_project.iml" filepath="$PROJECT_DIR$/.idea/Super_info_project.iml" />
-    </modules>
-  </component>
-</project>
