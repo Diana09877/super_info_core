@@ -155,4 +155,4 @@ STATIC_ROOT = 'static'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-from .local_settings import SECRET_KEY
+from .local_settings.py import SECRET_KEY
