@@ -10,7 +10,7 @@ class Category(models.Model):
     class Meta:
         verbose_name_plural = 'Категории публикаций'
         verbose_name = 'Категория публикации'
-        #app_label = 'blog'
+
 
     def __str__(self):
         return self.title
@@ -21,7 +21,7 @@ class Hashtag(models.Model):
     class Meta:
         verbose_name_plural = 'Хештеги'
         verbose_name = 'Хештег'
-        #app_label = 'blog'
+
 
     def __str__(self):
         return self.title
@@ -37,7 +37,7 @@ class Publication(models.Model):
     image = models.ImageField(verbose_name='изображение',null=True)
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     is_active = models.BooleanField(default=True)
-   # updated_at = models.DateTimeField(auto_now=True)
+
 
     def __str__(self):
         return self.title
@@ -45,7 +45,7 @@ class Publication(models.Model):
     class Meta:
         verbose_name_plural = 'Публикации'
         verbose_name = 'Публикация'
-        #app_label = 'blog'
+
 
 
 
@@ -62,7 +62,7 @@ class PublicationComment(models.Model):
     class Meta:
         verbose_name_plural = 'Комментарии публикаций'
         verbose_name = 'Комментарий Публикации'
-        #app_label = 'blog'
+
 
 
 class Contact(models.Model):
@@ -77,4 +77,4 @@ class Contact(models.Model):
     class Meta:
         verbose_name_plural = 'Контакты'
         verbose_name = 'Контакт'
-        #app_label = 'blog'
+

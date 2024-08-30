@@ -36,7 +36,7 @@
             <div class="row tm-row tm-mt-100 tm-mb-75">
                 <div class="tm-prev-next-wrapper">
                 {% if page_obj.has_previous %}
-                    <a href="?page={{page_obj.previous_page_number }}" class="mb-2 tm-btn tm-btn-primary tm-prev-next disabled tm-mr-20">{% trans 'Предыдущий' %}</a>
+                    <a href="?page={{page_obj.previous_page_number }}" class="mb-2 tm-btn tm-btn-primary tm-prev-next ">{% trans 'Предыдущий' %}</a>
                 {% endif %}
 
                 {% if page_obj.has_next %}

@@ -40,7 +40,10 @@
             <form action="{% url 'set_language' %}" method="post">
                 {% csrf_token %}
                 <input name="next" type="hidden" value="{{ request.get_full_path }}">
-                <input type="submit" value="Go">
+                <select name="language">
+                    <option value="{{ request.get_full_path }}" {% if 'ru' %}selected{% endif %}>RU</option>
+            <option value="{{ request.get_full_path }}" {% if 'ky' %}selected{% endif %}>KG</option>
+                </select>
             </form>
         </div>
         </div>
