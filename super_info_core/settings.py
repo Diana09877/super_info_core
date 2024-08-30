@@ -14,6 +14,7 @@ from pathlib import Path
 
 
 
+
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'super_info_core.settings')
 
 
@@ -26,8 +27,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-n#=167g#2y^33#ihlvi0@#1ks7qzg^$0losfaktj#n_hia0-cp'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -156,4 +155,4 @@ STATIC_ROOT = 'static'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
+from .local_settings import SECRET_KEY
