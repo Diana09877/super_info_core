@@ -1,5 +1,3 @@
-
-import telebot
 from django.core.paginator import Paginator
 from django.db.models import Q
 from django.http import HttpResponse
@@ -7,9 +5,6 @@ from django.views.generic import TemplateView, View
 from blog.models import Publication, Category,PublicationComment
 from django.shortcuts import render, redirect
 from django.shortcuts import get_object_or_404
-from blog.telegram_bot import bot
-
-
 
 class HomeView(TemplateView):
     template_name = 'index.html'
@@ -59,7 +54,6 @@ class PublicationDetailView(View):
         }
 
         return render(request, 'publication-detail.html', context)
-
 
 
 class PublicationCommentsView(View):
