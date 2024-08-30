@@ -31,7 +31,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'superinfonews.pythonanywhere.com']
+SECRET_KEY = 'django-insecure-n#=167g#2y^33#ihlvi0@#1ks7qzg^$0losfaktj#n_hia0-cp'
+
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -137,8 +139,6 @@ LOCALE_PATHS = [
 ]
 MODELTRANSLATION_DEFAULT_LANGUAGE = 'ru'
 
-#LOCALE_PATHS = os.path.join(BASE_DIR, 'locale')
-
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 MEDIA_URL = '/media/'
@@ -155,4 +155,4 @@ STATIC_ROOT = 'static'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-from .local_settings.py import SECRET_KEY
+
