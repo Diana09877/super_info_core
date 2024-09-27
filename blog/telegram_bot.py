@@ -2,7 +2,7 @@
 # import os
 # import django
 # from blog.models import Contact
-# from local_settings import API_TOKEN
+# from local_settings import API_TOKEN,chat_id
 #
 # os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'super_info_core.settings')
 # django.setup()
@@ -19,7 +19,7 @@
 #     id = message.from_user.id
 #     message = message.text
 #
-#     Contact.objects.create(name=name, id=id, message=message)
+#     Contact.objects.create(name=name, id=chat_id, message=message)
 #
 #     bot.reply_to(message, "Спасибо за ваше сообщение! Мы его получили и обязательно рассмотрим.")
 #

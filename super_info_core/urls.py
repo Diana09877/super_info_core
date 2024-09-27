@@ -14,36 +14,34 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
-from blog.views import HomeView, PublicationDetailView, PublicationCommentsView,  HomeSearchView, \
+from blog.views import HomeView, PublicationDetailView, PublicationCommentsView, HomeSearchView, \
     Contact_view
 from django.conf.urls.static import static
 from django.urls import path, include
 from django.conf import settings
+
 from django.conf.urls.i18n import i18n_patterns
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('i18n', include('django.conf.urls.i18n')),
+    path('i18n/', include('django.conf.urls.i18n')),
+
+]
 
 
-
-#urlpatterns +=18n_patterns(
-    path('i18n', include('django.conf.urls.i18n')),
-    path('admin/', admin.site.urls),
-    path('home/', HomeView.as_view(), name='home'),
+urlpatterns += i18n_patterns(
+    path('', HomeView.as_view(), name='home'),
     path('home/search/', HomeSearchView.as_view(), name='home-search-url'),
     path('publication-detail/<int:pk>/', PublicationDetailView.as_view(), name='publication-detail-url'),
-    path('publication-detail/', PublicationDetailView.as_view(), name='publication-detail'),
-    #path('publication-detail/', CategoriesView.as_view(), name='categories'),
-    #path('publication-detail/<int:pk>/',PublicationCommentView.as_view(), name='publications'),
     path('publication-detail/<int:pk>/create-comment/', PublicationCommentsView.as_view()),
-    path('contact/', Contact_view, name='contact')
+    path('contact/', Contact_view, name='contact'),
+)
 
 
 
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-
-#urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

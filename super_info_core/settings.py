@@ -12,6 +12,14 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 import os.path
 from pathlib import Path
 
+
+
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'super_info_core.settings')
+
+
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -19,13 +27,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-n#=167g#2y^33#ihlvi0@#1ks7qzg^$0losfaktj#n_hia0-cp'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+SECRET_KEY = 'django-insecure-n#=167g#2y^33#ihlvi0@#1ks7qzg^$0losfaktj#n_hia0-cp'
+
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -34,6 +42,8 @@ INSTALLED_APPS = [
     'modeltranslation',
     'django.contrib.admin',
     'django.contrib.auth',
+    'django.contrib.sites',
+    'django.contrib.flatpages',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -41,8 +51,8 @@ INSTALLED_APPS = [
     'ckeditor',
     'blog',
 
-
 ]
+SITE_ID=1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -111,20 +121,22 @@ AUTH_PASSWORD_VALIDATORS = [
 gettext = lambda s: s
 
 LANGUAGES = (
-    ('en', gettext('English')),
     ('ru',gettext( 'Russian')),
     ('kg', gettext('Kyrgyz')),
 )
 LOCALE_PATHS = [
     BASE_DIR / 'locale/',
 ]
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru'
 
-TIME_ZONE = 'Asia/Bishkek'
+
+
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
+
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 MEDIA_URL = '/media/'
@@ -140,3 +152,5 @@ STATIC_ROOT = 'static'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+

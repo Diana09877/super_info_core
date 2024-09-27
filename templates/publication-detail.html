@@ -1,11 +1,13 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
+
 {% block content %}
 <body>
-            <div class="row tm-row">
-                <div class="col-lg-8 tm-post-col">
-                    <div class="tm-post-full">
-                        <div class="mb-4">
+        <div class="row tm-row">
+            <div class="col-lg-8 tm-post-col">
+                   <div class="tm-post-full">
+                       <div class="mb-4">
                             <h2 class="pt-2 tm-color-primary tm-post-title">{{ publication.title }}</h2>
                             <p class="tm-mb-40">{{ publication.category.title }}</p>
                             <p class="tm-mb-40">{{ publication.created_at }}</p>
@@ -18,12 +20,12 @@
                             <span class="d-block text-right tm-color-primary">Hashtags: #{{ item.title }}
                             </span>
                             {% endfor %}
-                        </div>
+                       </div>
 
 
                         <!-- Comments -->
                         <div>
-                            <h2 class="tm-color-primary tm-post-title">Comments</h2>
+                            <h2 class="tm-color-primary tm-post-title">{% trans 'Комментарии:' %}</h2>
                             <hr class="tm-hr-primary tm-mb-45">
                              {% for item in publication.comments.all %}
                              <div class="tm-comment-reply tm-mb-45">
@@ -40,36 +42,37 @@
                             {% endfor %}
                             <form method="POST" action="create-comment/">
                                 {% csrf_token %}
-                                <h2 class="tm-color-primary tm-post-title mb-4">Your comment</h2>
+                                <h2 class="tm-color-primary tm-post-title mb-4">{% trans 'Ваш комментарий' %}</h2>
                                 <div class="mb-4">
-                                    <input class="form-control" name="author_name" type="text" placeholder="Your name">
+                                    <input class="form-control" name="author_name" type="text" placeholder="{% trans 'Ваше имя' %}">
                                 </div>
                                 <div class="mb-4">
-                                    <textarea class="form-control" name="comment_text" rows="6" placeholder="Your comment text"></textarea>
+                                    <textarea class="form-control" name="comment_text" rows="6" placeholder="{% trans 'Ваш текст комментария' %}"></textarea>
                                 </div>
                                 <div class="text-right">
-                                    <input type="submit" value="SUBMIT">
+                                    <input type="submit" value="{% trans 'ОТПРАВИТЬ' %}">
                                 </div>
                             </form>
                         </div>
-                    </div>
-                </div>
+                   </div>
+            </div>
                 <aside class="col-lg-4 tm-aside-col">
                     <div class="tm-post-sidebar">
                         <hr class="mb-3 tm-hr-primary">
-                        <h2 class="mb-4 tm-post-title tm-color-primary">CATEGORIES:</h2>
+                        <h2 class="mb-4 tm-post-title tm-color-primary">{% trans 'КАТЕГОРИИ:' %}</h2>
                         {% for item in category_list %}
                         <ul class="tm-mb-75 pl-5 tm-category-list">
-                            <li><a href="" class="tm-color-primary">{{ item.title }}</a></li>
+                            <li><a href="#" class="tm-color-primary">{{ item.title }}</a></li>
                         </ul>
                         {% endfor %}
                         <hr class="mb-3 tm-hr-primary">
-                        <h2 class="tm-mb-40 tm-post-title tm-color-primary">Breaking News:</h2>
-                        {% for publication in related_publications %}
-                        <li><a href="{ url 'publication-detail-url' publication.id %}" class="d-block tm-mb-40">{{ publication.title }}
+                        <h2 class="tm-mb-40 tm-post-title tm-color-primary">{% trans 'Актуальные новости:' %} </h2>
+                        {% for related_publication in related_publications %}
+                        <li>
+                            <a href="{% url 'publication-detail-url' related_publication.id %}">{{ related_publication.title }}
                             <figure>
-                                <img src="{{ publication.image.url }}" alt="Image" class="mb-3 img-fluid">
-                                <figcaption class="tm-color-primary">{{ publication.short_description }}</figcaption>
+                                <img src="{{ related_publication.image.url }}" alt="Image" class="mb-3 img-fluid">
+                                <figcaption class="tm-color-primary">{{ related_publication.short_description }}</figcaption>
                             </figure>
                         </a>
                         </li>
