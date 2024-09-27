@@ -20,10 +20,17 @@ from blog.views import HomeView, PublicationDetailView, PublicationCommentsView,
 from django.conf.urls.static import static
 from django.urls import path, include
 from django.conf import settings
-
+from django.conf.urls.i18n import i18n_patterns
 
 
 urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('i18n', include('django.conf.urls.i18n')),
+
+
+
+#urlpatterns +=18n_patterns(
+    path('i18n', include('django.conf.urls.i18n')),
     path('admin/', admin.site.urls),
     path('home/', HomeView.as_view(), name='home'),
     path('home/search/', HomeSearchView.as_view(), name='home-search-url'),
@@ -36,6 +43,7 @@ urlpatterns = [
 
 
 
-]
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+#urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

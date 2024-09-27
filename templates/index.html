@@ -48,7 +48,7 @@
                         <ul>
 
                             {% for p in page_obj.paginator.page_range %}
-                            <li class="tm-paging-item {% if page_obj.nummber == p %} active {% endif %}">
+                            <li class="tm-paging-item {% if page_obj.number == p %} active {% endif %}">
                                 <a href="?page={{ p }}" class="mb-2 tm-btn tm-paging-link">{{ p }}</a>
                             </li>
                             {% endfor %}

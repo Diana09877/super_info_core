@@ -15,7 +15,7 @@ class HomeView(TemplateView):
         publications = Publication.objects.filter(is_active=True)
 
         paginator = Paginator(publications,3)
-        page_number = self.request.GET.get('page')
+        page_number = self.request.GET.get('page', 1)
         page_obj = paginator.get_page(page_number)
 
         context = {
